@@ -122,7 +122,7 @@ const Banner = ({ movies }: { movies: Movie[] }) => {
                         transition={{ duration: 0.6 }}
                         src={getPosterUrl(movie.poster_path)}
                         alt={movie.title}
-                        className="hidden lg:block mt-30 xl:mt-0 lg:w-65 xl:w-115 rounded-3xl mr-10"
+                        className="hidden lg:block mt-30 xl:mt-0 lg:w-65 xl:w-95 rounded-3xl mr-10"
                       />
                     )}
                   </>

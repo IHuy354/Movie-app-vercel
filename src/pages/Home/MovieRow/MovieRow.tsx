@@ -56,7 +56,7 @@ const MovieRow = ({ title, movies, mediaType }: MovieRowProps) => {
                   <img
                     src={getPosterUrl(movie.poster_path)}
                     alt={movie.title}
-                    className="w-full h-55 lg:h-75 xl:h-107 rounded-3xl"
+                    className="w-full h-55 lg:h-75 xl:h-93 rounded-3xl"
                     draggable={false}
                   />
 

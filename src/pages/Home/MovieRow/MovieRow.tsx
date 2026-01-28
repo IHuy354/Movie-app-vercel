@@ -1,0 +1,87 @@
+import { getPosterUrl } from "../../../utils/image";
+import { FaPlay } from "react-icons/fa";
+import { useMediaNavigation } from "../../../hooks/useMediaNavigation";
+import { useNavigate } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import type { MovieRowProps } from "./libs/types";
+
+const MovieRow = ({ title, movies, mediaType }: MovieRowProps) => {
+  const { goToDetail } = useMediaNavigation();
+  const navigate = useNavigate();
+
+  if (!movies.length) return null;
+
+  return (
+    <div className="px-7 mt-10">
+      {/* Header */}
+      <div className="flex justify-between mt-5">
+        <h3 className="font-medium sm:text-base md:text-xl lg:text-2xl xl:text-[23px]">
+          {title}
+        </h3>
+        <button
+          onClick={() => navigate(`${mediaType}`)}
+          className="cursor-pointer border-2 rounded-3xl px-6 font-medium text-[11px] sm:text-[12px] md:text-[14px] lg:text-15px xl:text-[17px] hover:text-red-600 hover:bg-amber-50 hover:border-white duration-300"
+        >
+          View more
+        </button>
+      </div>
+
+      {/* Slider */}
+      <div className="mt-7">
+        <Swiper
+          modules={[Autoplay]}
+          breakpoints={{
+            0: { slidesPerView: 2 },
+            640: { slidesPerView: 3 },
+            768: { slidesPerView: 4 },
+            1024: { slidesPerView: 5 },
+            1025: { slidesPerView: 6 },
+          }}
+          spaceBetween={16}
+          loop
+          speed={400}
+          autoplay={{
+            delay: 4000,
+          }}
+          className="w-full"
+        >
+          {movies.map((movie) => (
+            <SwiperSlide key={movie.id}>
+              <div
+                className="hover:cursor-pointer"
+                onClick={() => goToDetail(mediaType, movie.id)}
+              >
+                <div className="relative group">
+                  <img
+                    src={getPosterUrl(movie.poster_path)}
+                    alt={movie.title}
+                    className="w-full h-65 lg:h-75 xl:h-107 rounded-3xl"
+                    draggable={false}
+                  />
+
+                  {/* Overlay */}
+                  <div className="absolute inset-0 rounded-3xl bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button
+                      className="bg-red-600 w-21 h-12 rounded-3xl shadow-[1px_1px_27px_7px_#fe0000]
+                                 flex items-center justify-center scale-0 group-hover:scale-100
+                                 transition duration-300 cursor-pointer"
+                    >
+                      <FaPlay className="size-3" />
+                    </button>
+                  </div>
+                </div>
+
+                <p className="text-[17px] mt-2 font-medium truncate">
+                  {movie.title ?? movie.original_name}
+                </p>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </div>
+  );
+};
+
+export default MovieRow;

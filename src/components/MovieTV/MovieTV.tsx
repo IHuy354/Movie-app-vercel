@@ -66,7 +66,7 @@ const Media = ({
           <button
             type="submit"
             disabled={isFetching}
-            className="absolute font-medium cursor-pointer top-0 right-0 bg-red-600 hover:bg-red-500 transition duration-300 rounded-full px-7 py-2 shadow-[1px_1px_15px_3px_#fe0000]  hover:shadow-[1px_1px_27px_7px_#fe0000]"
+            className="absolute z-10 font-medium cursor-pointer top-0 right-0 bg-red-600 hover:bg-red-500 transition duration-300 rounded-full px-7 py-2 shadow-[1px_1px_15px_3px_#fe0000]  hover:shadow-[1px_1px_27px_7px_#fe0000]"
           >
             {isFetching ? "Loading..." : "Search"}
           </button>

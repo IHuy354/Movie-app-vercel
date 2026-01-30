@@ -19,12 +19,14 @@ const MovieRow = ({ title, movies, mediaType }: MovieRowProps) => {
         <h3 className="font-medium sm:text-base md:text-xl lg:text-2xl xl:text-[23px]">
           {title}
         </h3>
-        <button
-          onClick={() => navigate(`${mediaType}`)}
-          className="cursor-pointer border-2 rounded-3xl px-6 font-medium text-[11px] sm:text-[12px] md:text-[14px] lg:text-15px xl:text-[17px] hover:text-red-600 hover:bg-amber-50 hover:border-white duration-300"
-        >
-          View more
-        </button>
+        {title !== "Similar" && (
+          <button
+            onClick={() => navigate(`${mediaType}`)}
+            className="cursor-pointer border-2 rounded-3xl px-6 font-medium text-[11px] sm:text-[12px] md:text-[14px] lg:text-15px xl:text-[17px] hover:text-red-600 hover:bg-amber-50 hover:border-white duration-300"
+          >
+            View more
+          </button>
+        )}
       </div>
 
       {/* Slider */}

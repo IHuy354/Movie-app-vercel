@@ -27,12 +27,13 @@ const MovieDetail = () => {
       </div>
     );
   }
-  
+
   if (isError || !mediaData) {
     return <div className="text-center">Error loading data</div>;
   }
 
   const { detail, casts, videos, similar } = mediaData;
+  console.log(mediaType);
 
   return (
     <div className="-mt-27">

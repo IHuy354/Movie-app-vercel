@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 const MainLayout = () => {
   return (
-    <div className="bg-black">
+    <div className="bg-[#0f0f0f]">
       <Navigation />
       <div className="  text-white">
         <Outlet />

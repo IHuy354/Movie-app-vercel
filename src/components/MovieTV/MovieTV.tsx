@@ -56,9 +56,10 @@ const Media = ({
           className=" relative w-full md:w-150 lg:w-120 "
         >
           <input
+          maxLength={25}
             type="text"
             placeholder="Enter Keyword "
-            className="pl-5 pr-70 py-2 rounded-3xl bg-black outline-none w-full"
+            className="pl-5 py-2 rounded-3xl bg-black outline-none w-full"
             value={keyword}
             onChange={(e) => setKeyword(e.target.value)}
           />

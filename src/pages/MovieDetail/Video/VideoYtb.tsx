@@ -12,7 +12,7 @@ const VideoYtb = ({ videoData }: VideoYtbProps) => {
       {vdData.map((videodt) => (
         <div className="mt-12 aspect-video px-5 md:px-18" key={videodt.id}>
           {/* ✅ Dùng videodt.id thay vì index */}
-          <p className="mb-3 text-base xl:text-2xl font-medium">
+          <p className="mb-3 text-base md:text-xl xl:text-2xl font-medium">
             {videodt.name}
           </p>
           <iframe

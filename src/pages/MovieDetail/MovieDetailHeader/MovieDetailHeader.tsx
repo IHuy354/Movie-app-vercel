@@ -53,7 +53,7 @@ const MovieDetailHeader = ({ dataDetail, casts }: MovieDetailHeaderProps) => {
             <div className="mt-8">
               <h2 className="text-lg sm:text-xl font-semibold mb-4">Casts</h2>
 
-              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 max-w-3xl">
+              <div className=" grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 max-w-3xl">
                 {casts?.map((cast) => (
                   <div key={cast.id} className="flex flex-col items-center">
                     <img
@@ -61,7 +61,7 @@ const MovieDetailHeader = ({ dataDetail, casts }: MovieDetailHeaderProps) => {
                       alt={cast?.name}
                       className=" max-w-25 xl:max-w-32.5 aspect-2/3 rounded-xl object-cover"
                     />
-                    <p className="mt-2 text-xs sm:text-sm line-clamp-2">
+                    <p className="mt-2 text-xs sm:text-sm line-clamp-2 mb-2">
                       {cast?.name}
                     </p>
                   </div>

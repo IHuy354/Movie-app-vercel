@@ -56,10 +56,10 @@ const Media = ({
           className=" relative w-full md:w-150 lg:w-120 "
         >
           <input
-          maxLength={25}
             type="text"
-            placeholder="Enter Keyword "
-            className="pl-5 py-2 rounded-3xl bg-black outline-none w-full"
+            maxLength={40}
+            placeholder="Enter Keyword"
+            className="flex-1 px-5 py-2 w-full rounded-3xl bg-black outline-none min-w-0"
             value={keyword}
             onChange={(e) => setKeyword(e.target.value)}
           />
@@ -111,7 +111,7 @@ const Media = ({
             ))}
         </div>
         {data.length === 0 && search.length > 0 && (
-          <div className="text-center text-white text-2xl mt-10">
+          <div className="text-center wrap-break-word text-white text-2xl mt-10">
             Không tìm thấy phim cho từ khóa: "{search}"
           </div>
         )}

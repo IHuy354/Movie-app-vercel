@@ -1,7 +1,7 @@
 import LogoTitle from "../components/LogoTitle/LogoTitle";
 
 const ContentClass = (): string => `
-  py-2 text-2xl duration-400 font-medium
+  py-2 text-xl xl:text-2xl duration-400 font-medium
    hover:text-red-500 
 `;
 

@@ -138,7 +138,10 @@ const Banner = ({ movies }: { movies: Movie[] }) => {
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
           onClick={() => setShowTrailer(false)}
         >
-          <div onClick={(e) => e.stopPropagation()} className="w-180 h-120">
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="w-180 h-90 xl:h-120"
+          >
             <iframe
               src={getYoutubeEmbedUrl(trailerKey)}
               className="w-full h-full"

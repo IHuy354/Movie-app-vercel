@@ -10,3 +10,5 @@ const tmdbClient = axios.create({
 });
 
 export default tmdbClient;
+
+  // API_KEY: process.env.NEXT_PUBLIC_API_KEY as string, 

@@ -1,5 +1,5 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { getMediaList, searchMedia } from "../services/api";
 import type { MediaType, MediaCategory } from "../services/api";
 
@@ -15,6 +15,11 @@ export const useMediaSearch = ({
   initialSearch = "",
 }: UseMediaSearchOptions) => {
   const [search, setSearch] = useState(initialSearch);
+
+  useEffect(() => {
+    setSearch(initialSearch);
+  }, [type, initialSearch]);
+
   const isSearching = search.trim().length > 0;
   const {
     data,

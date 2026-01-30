@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import LogoTitle from "../components/LogoTitle/LogoTitle";
 
 const ContentClass = (): string => `
@@ -6,6 +7,7 @@ const ContentClass = (): string => `
 `;
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <div className="relative h-120 text-white ">
       <img
@@ -18,7 +20,12 @@ const Footer = () => {
         <LogoTitle />
         <div className="flex justify-between gap-30 mt-14 xl:mt-17 cursor-pointer">
           <div>
-            <div className={ContentClass()}>Home</div>
+            <a
+              href="/"
+              className={ContentClass()}
+            >
+              Home
+            </a>
             <div className={ContentClass()}>Contact us</div>
             <div className={ContentClass()}>Term of services</div>
             <div className={ContentClass()}>About us</div>

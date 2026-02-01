@@ -33,6 +33,7 @@ const Footer = () => {
             <div className={ContentClass()}>Live</div>
             <div className={ContentClass()}>FAQ</div>
             <div className={ContentClass()}>Premium</div>
+            <a href="https://www.facebook.com/duchuy.93333" className={ContentClass()}>FB eHuy</a>
           </div>
 
           <div className="hidden lg:block">
